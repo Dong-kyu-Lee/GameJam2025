@@ -3,6 +3,10 @@ using UnityEngine;
 // 자동차 플레이어 컨트롤러
 public class PlayerController : MonoBehaviour
 {
+    public int HP = 100; // 플레이어 HP
+    public int MaxHP = 100;
+
+    // 이동 속도 및 회전 속도
     public Rigidbody rb;
     public float speed = 10f;
     public float turnSpeed = 50f;
