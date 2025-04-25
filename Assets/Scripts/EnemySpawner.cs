@@ -6,11 +6,12 @@ public class EnemySpawner : MonoBehaviour
 {
     public List<GameObject> spawnPoints = new List<GameObject>();
     public GameObject enemyPrefab;
-    public int[] enemyCounts = new int[5] { 5, 10, 15, 20, 25 };
+    private int[] enemyCounts = new int[5] { 5, 10, 15, 20, 25 };
 
     private int currentWave = 0;
     private int activeEnemies = 0;
     private int spawnIndex = 0;
+    private bool isGameOver = false;
 
     void Start()
     {
@@ -19,11 +20,19 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
+        if(isGameOver) return;
+
         if (activeEnemies <= 0)
         {
-            if (currentWave < enemyCounts.Length)
+            if (currentWave < 5)
             {
                 StartWave();
+            }
+            else
+            {
+                // game clear
+                GameManager.Instance.GameClear();
+                isGameOver = true;
             }
         }
     }
@@ -31,7 +40,7 @@ public class EnemySpawner : MonoBehaviour
     void StartWave()
     {
         activeEnemies = enemyCounts[currentWave];
-
+        Debug.Log(currentWave + ", " + enemyCounts.Length);
         for (int i = 0; i < activeEnemies; i++)
         {
             SpawnEnemy();

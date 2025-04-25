@@ -12,6 +12,8 @@ public class Bullet : MonoBehaviour
     private GameObject explosionPrefab = null; // 폭발 이펙트 프리팹
     private bool isExploding = false; // 폭발 여부
 
+    public AudioClip explosionClip;
+
     void Awake()
     {
         gameObject.SetActive(false); // 비활성화 상태로 시작
@@ -34,6 +36,7 @@ public class Bullet : MonoBehaviour
 
     void Explosion()
     {
+        SoundManager.Instance.PlaySound(explosionClip); // 폭발 소리 재생
         Collider[] hitTargets = Physics.OverlapSphere(
             transform.position,
             attackRange,

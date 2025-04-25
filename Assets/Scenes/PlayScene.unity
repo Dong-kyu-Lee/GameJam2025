@@ -2385,7 +2385,6 @@ MonoBehaviour:
   - {fileID: 164739981}
   - {fileID: 671569256}
   enemyPrefab: {fileID: 1633749680827877624, guid: f9e7b41970e7ab44e8b042ad99ae1d0e, type: 3}
-  enemyCounts: 050000000a0000000f000000
 --- !u!1001 &122107511
 PrefabInstance:
   m_ObjectHideFlags: 0

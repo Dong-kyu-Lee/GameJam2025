@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public PlaySceneUI playSceneUI;
     public int maxScore;
     public int currentScore;
+
     void Awake()
     {
         currentScore = 0;
@@ -75,5 +76,11 @@ public class GameManager : MonoBehaviour
     public void DestroySelf()
     {
         Destroy(instance.gameObject);
+    }
+
+    public void GameClear()
+    {
+        // 게임 클리어 처리
+        SceneManager.LoadScene("ClearScene");
     }
 }

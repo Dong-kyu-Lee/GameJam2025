@@ -55,6 +55,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   explosionPrefab: {fileID: 949487493265698166}
+  explosionClip: {fileID: 8300000, guid: 7bef0064f8567430cac22499c6b93d4f, type: 3}
 --- !u!1 &8182439740563532681
 GameObject:
   m_ObjectHideFlags: 0
