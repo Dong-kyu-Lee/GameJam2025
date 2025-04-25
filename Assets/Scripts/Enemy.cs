@@ -58,8 +58,9 @@ public class Enemy : MonoBehaviour
 
     void OnDestroy()
     {
-        if (spawner != null)
+        if (spawner != null && HP <= 0)
         {
+            GameManager.Instance.AddScore(100); // 점수 추가
             spawner.OnEnemyDestroyed();
         }
     }

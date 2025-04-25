@@ -6,7 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
     public List<GameObject> spawnPoints = new List<GameObject>();
     public GameObject enemyPrefab;
-    public int[] enemyCounts = new int[4] { 5, 10, 15, 20 };
+    public int[] enemyCounts = new int[5] { 5, 10, 15, 20, 25 };
 
     private int currentWave = 0;
     private int activeEnemies = 0;
@@ -14,14 +14,13 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
-        StartWave();
+        // StartWave();
     }
 
     void Update()
     {
         if (activeEnemies <= 0)
         {
-            currentWave++;
             if (currentWave < enemyCounts.Length)
             {
                 StartWave();
@@ -37,6 +36,7 @@ public class EnemySpawner : MonoBehaviour
         {
             SpawnEnemy();
         }
+        currentWave++;
     }
 
     void SpawnEnemy()

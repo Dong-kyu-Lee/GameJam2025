@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public float attackcooldown = 1f; // 공격 쿨타임
     private bool isAttacking = false; // 공격 중인지 여부
 
+    public PlaySceneUI playSceneUI; // UI 스크립트 참조
     public Camera cam; // 카메라
     public GameObject deadExplosion; // 사망 이펙트 프리팹
     private Rigidbody rb;
@@ -89,6 +90,7 @@ public class PlayerController : MonoBehaviour
         explosion.SetActive(true); // 이펙트 활성화
         yield return new WaitForSeconds(2f); // 이펙트 지속 시간 대기
         gameObject.SetActive(false); // 플레이어 비활성화
+        GameManager.Instance.PlayerDead(); // 게임 매니저에 사망 알림
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -101,6 +103,7 @@ public class PlayerController : MonoBehaviour
         {
             
             HP -= collision.gameObject.GetComponent<Enemy>().damage; // HP 감소
+            playSceneUI.UpdateHPBar(HP / (float)MaxHP); // HP 바 업데이트
             if (HP <= 0)
             {
                 StartCoroutine(Dead()); // 사망 처리
