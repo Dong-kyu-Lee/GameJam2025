@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 400000}
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
-  - component: {fileID: 7411599333274513366}
+  - component: {fileID: 7530300338640512852}
   m_Layer: 0
   m_Name: Road Corner_01
   m_TagString: Untagged
@@ -87,14 +87,14 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7411599333274513366
+--- !u!65 &7530300338640512852
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100000}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 3a5fd998c9e9da240adf2600f156c5f9, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
