@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
         {
             bulletPrefabs.Add(Instantiate(bulletPrefab, transform.position, Quaternion.identity));
         }
+        Physics.gravity = new Vector3(0, -20.0f, 0);
     }
 
     private void Update()
@@ -61,7 +62,7 @@ public class PlayerController : MonoBehaviour
         // È¸Àü
         float turn = turnInput * turnSpeed * Time.fixedDeltaTime;
         Quaternion turnRotation;
-        if (moveInput > 0) turnRotation = Quaternion.Euler(0f, turn, 0f);
+        if (moveInput >= 0) turnRotation = Quaternion.Euler(0f, turn, 0f);
         else turnRotation = Quaternion.Euler(0f, -turn, 0f);
         rb.MoveRotation(rb.rotation * turnRotation);
     }

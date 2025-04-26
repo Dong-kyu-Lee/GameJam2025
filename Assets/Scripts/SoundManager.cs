@@ -2,43 +2,49 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public AudioClip buttonClickClip;
+    public static SoundManager Instance;
 
-    private static SoundManager instance;
-    public static SoundManager Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                GameObject obj = new GameObject("SoundManager");
-                instance = obj.AddComponent<SoundManager>();
-                DontDestroyOnLoad(obj);
-            }
-            return instance;
-        }
-    }
+    public AudioSource bgmSource;
+    public AudioClip[] bgmClips; // 0: StartSccene, EndScene, ClearScene 씬 BGM, 1: PlayScene씬 BGM 등
 
     void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = GetComponent<SoundManager>();
+            Instance = this;
             DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 
-    public void PlaySound(AudioClip clip, bool loop = false)
+    public void PlayBGM(int bgmIndex)
+    {
+        if (bgmSource != null)
+        {
+            if (bgmSource.clip == bgmClips[bgmIndex] && bgmSource.isPlaying)
+                return; // 이미 재생 중이면 패스
+        }
+        StopBGM();
+
+        bgmSource.clip = bgmClips[bgmIndex];
+        bgmSource.loop = true;
+        bgmSource.Play();
+    }
+
+    public void StopBGM()
+    {
+        if(bgmSource != null && bgmSource.isPlaying)
+            bgmSource.Stop();
+    }
+
+    public void PlaySound(AudioClip clip)
     {
         AudioSource audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.clip = clip;
         audioSource.Play();
-        audioSource.loop = loop;
-        Destroy(audioSource, clip.length); // Destroy the AudioSource after the clip has finished playing
-    }
-
-    public void ButtonClickSound(AudioClip clip)
-    {
-
+        Destroy(audioSource, clip.length);
     }
 }

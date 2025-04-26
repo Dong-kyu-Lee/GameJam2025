@@ -1635,7 +1635,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 21, y: -20}
+  m_AnchoredPosition: {x: 60, y: -60}
   m_SizeDelta: {x: 212.2, y: 10}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &95669724
@@ -1685,8 +1685,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4040,8 +4040,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 20, y: 20}
-  m_SizeDelta: {x: 200, y: 20}
+  m_AnchoredPosition: {x: 60, y: 60}
+  m_SizeDelta: {x: 550, y: 50}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &219007387
 MonoBehaviour:
@@ -13169,7 +13169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 100
   MaxHP: 100
-  acceleration: 120
+  acceleration: 1200
   maxSpeed: 40
   turnSpeed: 120
   attackcooldown: 1
@@ -40344,8 +40344,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 20, y: 20}
-  m_SizeDelta: {x: 200, y: 20}
+  m_AnchoredPosition: {x: 60, y: 60}
+  m_SizeDelta: {x: 550, y: 50}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &2147480849
 MonoBehaviour:

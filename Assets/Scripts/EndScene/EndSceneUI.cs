@@ -1,12 +1,14 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class EndSceneUI : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public TextMeshProUGUI scoreText;
     void Start()
     {
-        
+        SoundManager.Instance.PlayBGM(0);
+        scoreText.text = $"Score: {GameManager.Instance.currentScore}";
     }
 
     public void MoveScene()

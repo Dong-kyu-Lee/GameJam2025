@@ -3,14 +3,17 @@ using UnityEngine.SceneManagement;
 
 public class StartSceneUI : MonoBehaviour
 {
-    public AudioClip startSceneClip;
-
     private void Start()
     {
-        SoundManager.Instance.PlaySound(startSceneClip);
+        SoundManager.Instance.PlayBGM(0);
     }
     public void MoveScene()
     {
         SceneManager.LoadScene("PlayScene");
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
     }
 }

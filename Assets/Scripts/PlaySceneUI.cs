@@ -6,11 +6,10 @@ public class PlaySceneUI : MonoBehaviour
 {
     public Image hpBar;
     public TextMeshProUGUI scoreText;
-    public AudioClip playSceneClip;
 
     void Start()
     {
-        
+        SoundManager.Instance.PlayBGM(1);
     }
 
     public void UpdateHPBar(float hp)
